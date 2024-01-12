@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Night with Casa Loma</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js" defer></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+</head>
+
+<body>
+    <!-- Navigation Link -->
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movie_detail.html">Schedule</a></li>
+          <li><a href="purchase_ticket.html">Buy tickets</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Main Section -->
+        <div id="festival-info">
+            <div id="info-content">
+                <h1>A Night with Casa Loma</h1>
+
+                <div id="date-location">
+                    <h3>Date:</h3>
+                    <p>24-26, November 2023</p>
+
+                    <h3>Location:</h3>
+                    <p>Casa Loma, 1 Austin Terrace, Toronto, ON</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movie selection area -->
+        <div id="movie-select">
+            <div class="movie" id="movie-1" onclick="chBackgroundPic('movie-1')".s>
+                <img src="/asserts/anatomy-of-a-fall-thumbnail.jpg" />
+                <p>Anatomy Of A Fall</p>
+            </div>
+            <div class="movie" id="movie-2" onclick="chBackgroundPic('movie-2')".s>
+                <img src="/asserts/about-dry-grasses-thumbnail.jpeg" />
+                <p>About Dry Grasses</p>
+            </div>
+            <div class="movie" id="movie-3" onclick="chBackgroundPic('movie-3')".s>
+                <img src="/asserts/a-difficult-yeat-thumbnail.jpg" />
+                <p>A Difficult Year</p>
+            </div>
+        </div>
+
+        <!-- Tickets and pricing section -->
+        <div id="tickets-info"> 
+            <div id="ticket-header">
+                <h1>Tickets and pricing</h1>
+                <p>Choose from a variety passes and ticket options</p>
+            </div>
+
+            <!-- Ticket option 1 -->
+            <div id="ticket-opt">
+                <div id="ticket-opt-1">
+                    <h3>One Day Pass</h3>
+                    <h2>$30</h2>
+                    <ul>
+                        <li> 1 Day full access to the festival</li>
+                        <li> 5% off on snacks and drinks</li>
+                    </ul>
+
+                    <a href="purchase_ticket.html" target="_blank">
+                        <button class="btn-buy-ticket" >
+                            Buy Tickets
+                        </button>
+                    </a>
+                </div>
+                
+                <!-- TIcket option 2 -->
+                <div id="ticket-opt-2">
+                    <h3>All Access Pass</h3>
+                    <h2>$80</h2>
+                    <ul>
+                        <li> Unlimited access to the festival</li>
+                        <li> 10% off on snacks and drinks</li>
+                    </ul>
+                    <a href="purchase_ticket.html" target="_blank">
+                        <button class="btn-buy-ticket">
+                            Buy Tickets
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Map Section -->
+        <div id="map-info">
+            <h1>Map</h1>
+
+            <!-- Specify the map and it's dimensions -->
+            <div id="map"></div>
+            
+            <!-- Get the leaflet JavaScript file -->
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+                crossorigin=""></script>
+            <script>
+                // Initialize the map
+                const map = L.map('map')
+            
+                // Get the tile layer from OpenStreetMaps
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            
+                // Specify the maximum zoom of the map
+                maxZoom: 19,
+            
+                // Set the attribution for OpenStreetMaps
+                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            
+                // Set the view of the map
+                // with the latitude, longitude and the zoom value
+                map.setView([43.6780367, -79.4091208], 16);
+                
+
+                // Show a market at the position of the Casa Loma
+                let CasaLomaMarker = L.marker([43.6780367, -79.4091208]).addTo(map);
+            
+                // Bind popup to the marker with a popup
+                CasaLomaMarker.bindPopup("Casa Loma").openPopup();
+            </script>
+        </div>
+    </main>
+
+    <!-- Copy Right & Social Media Icon -->
+    <footer>
+        <h1 id="connect-with-us">Connect with us</h1>
+        <div id="social-media">
+            <a href="#"><img src="./asserts/fb_icon.jpeg" alt=""></a>
+            <a href="#"><img src="./asserts/ig_icon.jpeg" alt=""></a>
+            <a href="#"><img src="./asserts/x_icon.png" alt=""></a>
+            <a href="#"><img src="./asserts/youtube_icon.jpeg" alt=""></a>
+        </div>
+        <p>© A Night with Casa Loma All Right Reserved</p>
+    </footer>
+</body>
+
+</html>

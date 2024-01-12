@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/purchase_ticket.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet">
+    
+    <title>Ticket Purchase | A Night with Casa Loma</title>
+  </head>
+  <body>
+    <!-- Navigation Link -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movie_detail.html">Schedule</a></li>
+        <li><a href="purchase_ticket.html">Buy tickets</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- Main section: Purchase form that enable user input -->
+    <main class="container" id="section-main">
+      <h1>Order form</h1>
+      <label for="">Select the ticket type: </label>
+      <select id="ticket-type">
+        <option value="1">One Day Pass</option>
+        <option value="2">All Access Pass</option>
+      </select>
+
+      <label for="">Enter quantity of tickets: </label>
+      <input type="number" id="quantity-of-ticket" min="1" placeholder="Enter number of ticket(s). (Example: 1)">
+
+      <label for="">Enter credit card information: </label>
+      <input type="number" id="credit-card-information" placeholder="Enter credit card number (Example: xxxxxx)">
+
+      <button>Pay now</button>
+    </main>
+
+    <!-- Order Summary Section: Display an order summary showing the detail of their purchase -->
+    <section class="container" id="section-summary">
+      <h1>Order Summary</h1>
+      <p>Number of tickets: <span id="summary-number-of-ticket">X</span></p>
+      <p>Price per ticket: <span id="summary-price-per-ticket">$XXX.XX</span></p>
+      <p>Subtotal: <span id="summary-subtotal">$XXX.XX</span></p>
+      <p>Tax (<span id="summary-tax">XX%</span>): <span id="summary-tax-fee">$XX.XX</span></p>
+      <p>Final Price: <span id="summary-final-price">$XXX.XX</span></p>
+    </section>
+  </body>
+
+  <!-- Footer: copyright and social media links -->
+  <footer>
+    <h1 id="connect-with-us">Connect with us</h1>
+    <div id="social-media">
+      <a href="#"><img src="./asserts/fb_icon.jpeg" alt=""></a>
+      <a href="#"><img src="./asserts/ig_icon.jpeg" alt=""></a>
+      <a href="#"><img src="./asserts/x_icon.png" alt=""></a>
+      <a href="#"><img src="./asserts/youtube_icon.jpeg" alt=""></a>
+    </div>
+    <p>© A Night with Casa Loma All Right Reserved</p>
+</footer>
+
+  <script src="/js/purchase_ticket.js"></script>
+</html>
